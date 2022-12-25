@@ -41,7 +41,7 @@ fn check_systemd() -> Result<Vec<u8>> {
 }
 
 fn get_port(systemd: &[u8]) -> Result<String> {
-    let s = freedesktop_entry_parser::Entry::parse(systemd).unwrap();
+    let s = freedesktop_entry_parser::Entry::parse(systemd)?;
 
     let stream = s.section("Socket").attr("ListenStream");
 
