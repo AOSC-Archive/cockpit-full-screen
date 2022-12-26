@@ -29,7 +29,7 @@ pub fn get_service_state_with_async() -> zbus::Result<String> {
         .build()
         .unwrap();
 
-    runtime.block_on(async { get_state().await })
+    runtime.block_on(get_state())
 }
 
 pub fn check_port() -> Result<Vec<u8>> {

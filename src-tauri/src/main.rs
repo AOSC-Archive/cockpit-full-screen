@@ -13,7 +13,7 @@ fn main() {
     let state = systemd::get_service_state_with_async().unwrap();
 
     if state != "running" {
-        panic!("Systemd service cocket.socket not running!\nPlease check `systemctl status cockpit.socket to get more info!`")
+        panic!("Systemd service cocket.socket not running!\nPlease check `systemctl status cockpit.socket` to get more info!")
     }
 
     tauri::Builder::default()
